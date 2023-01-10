@@ -19,8 +19,10 @@ if __name__ == "__main__":
     # Setup logger
     loglevel = 10 # 10 = debug, 20 = info
     logger = logging.getLogger(__name__)
+    # Disable matplotlib logger output
+    logging.getLogger("matplotlib").setLevel(logging.WARNING)
     logging.basicConfig(format='%(levelname)s | %(name)s | %(message)s', stream=sys.stdout, level=loglevel)
-
+    
 
     # # Initial conditions, single ball
     # starting_point = np.array([0.8, 0.8])
@@ -41,4 +43,6 @@ if __name__ == "__main__":
     
     # print new ball positions
     print (table_state.extract_ball_positions())
+    
+    # Turn off logging, dont need to reset ipython to rerun
     logging.shutdown()

@@ -17,7 +17,7 @@ from Table import Table
 import physical_parameters as pp
 import logging
 import sys
-from plotting import plot_ball_history
+from plotting import plot_ball_history, animate_shot
 logger = logging.getLogger(__name__)
 
 #TODO ball-ball collisions
@@ -102,5 +102,7 @@ def simulate_single_strike(table_state, dt = 0.1):
         iteration += 1
         table_state.check_balls_in_motion()
         print ('-'*20)
-    plot_ball_history(table_state)
+    # plot_ball_history(table_state)
+    ball_history = np.array(table_state.cue_ball.position_history)
+    animate_shot(ball_history)
     
