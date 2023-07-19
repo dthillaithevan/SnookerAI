@@ -1,3 +1,3 @@
 # SnookerAI
 
-Deepmind pls hire. 
+
